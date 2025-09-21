@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Access Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>User Access Management System</h1>
+  
+  <!-- Register Form -->
+  <div class="container" id="registerForm">
+    <h3>Register</h3>
+    <input type="text" id="regUsername" placeholder="Enter Username" required>
+    <input type="password" id="regPassword" placeholder="Enter Password" required>
+    <select id="regRole">
+      <option value="student">Student</option>
+      <option value="faculty">Faculty</option>
+      <option value="hod">HOD</option>
+      <option value="admin">Admin</option>
+    </select>
+    <button onclick="register()">Register</button>
+    <a onclick="showLogin()">Already have an account? Login</a>
+  </div>
+
+  <!-- Login Form -->
+  <div class="container" id="loginForm" style="display:none;">
+    <h3>Login</h3>
+    <input type="text" id="username" placeholder="Enter Username" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+    <button onclick="login()">Login</button>
+    <a onclick="showRegister()">Don't have an account? Register</a>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="container dashboard" id="dashboard">
+    <h3>Welcome, <span id="displayUser"></span>!</h3>
+    
+    <!-- Admin Panel -->
+    <div class="admin">
+      <h4>Admin Panel</h4>
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    
+    <!-- Faculty Panel -->
+    <div class="faculty">
+      <h4>Faculty Panel - Mark Attendance</h4>
+      <table id="attendanceTable">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Present</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button onclick="saveAttendance()">Save Attendance</button>
+    </div>
+
+    <!-- HOD Panel -->
+    <div class="hod">
+      <h4>HOD Panel - Modify Attendance</h4>
+      <table id="hodAttendanceTable">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Attendance Count</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Student Panel -->
+    <div class="student">
+      <h4>Student Panel - View Attendance</h4>
+      <p id="studentAttendance"></p>
+    </div>
+    
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

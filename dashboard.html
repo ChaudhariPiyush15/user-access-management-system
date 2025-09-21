@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <h2 id="welcome"></h2>
+    <div id="adminPanel" class="hidden">
+      <h3>Admin Panel</h3>
+      <button onclick="addUser()">Add User</button>
+      <button onclick="viewUsers()">View All Users</button>
+      <div id="userList"></div>
+    </div>
+    <div id="userPanel" class="hidden">
+      <h3>User Panel</h3>
+      <p>Your profile details...</p>
+    </div>
+    <button onclick="logout()">Logout</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
